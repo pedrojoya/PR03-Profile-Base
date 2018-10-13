@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,4 +9,195 @@
     Use android:textColor="@color/color_state_selector" in TextViews acting as labels.
     -->
 
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/main_image_desc"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintDimensionRatio="w,9:16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat1" />
+
+    <TextView
+        android:id="@+id/lblAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/lblAvatar_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/lblName_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/txtName_h"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblName" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="172dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/txtEmail_h"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/imgEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
+
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/lblEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <TextView
+        android:id="@+id/lblPhonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.776"
+        app:layout_constraintStart_toEndOf="@+id/lblEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtPhonenumber"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="@string/txtPhone_h"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="@+id/imgEmail"
+        app:layout_constraintEnd_toStartOf="@+id/imgPhonenumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgEmail"
+        app:layout_constraintTop_toTopOf="@+id/imgEmail" />
+
+    <ImageView
+        android:id="@+id/imgEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
+        app:layout_constraintEnd_toStartOf="@+id/txtPhonenumber"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtEmail"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail"
+        app:srcCompat="@drawable/ic_email_24dp"
+        android:contentDescription="@string/imgEmail_desc" />
+
+    <ImageView
+        android:id="@+id/imgPhonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imgPhonenumber_desc"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPhonenumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtPhonenumber"
+        app:layout_constraintTop_toTopOf="@+id/txtPhonenumber"
+        app:srcCompat="@drawable/ic_call_24dp" />
+
+    <TextView
+        android:id="@+id/lblAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/lblAddress_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/lblAddress_h"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/imgAddress"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAddress" />
+
+    <ImageView
+        android:id="@+id/imgAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imgAddress_desc"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtAddress"
+        app:layout_constraintTop_toTopOf="@+id/txtAddress"
+        app:srcCompat="@drawable/ic_map_24dp" />
+
+    <TextView
+        android:id="@+id/lblWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/lblWeb_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+    <EditText
+        android:id="@+id/txtWeb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="@string/txtWeb_h"
+        android:inputType="textWebEditText"
+        app:layout_constraintEnd_toStartOf="@+id/imgWeb"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWeb" />
+
+    <ImageView
+        android:id="@+id/imgWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtWeb"
+        app:layout_constraintTop_toBottomOf="@+id/lblWeb"
+        app:srcCompat="@drawable/ic_web_24dp"
+        android:contentDescription="@string/imgWeb_desc" />
 </androidx.constraintlayout.widget.ConstraintLayout>
