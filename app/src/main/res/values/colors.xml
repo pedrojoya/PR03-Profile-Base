@@ -8,4 +8,5 @@
     <color name="colorError">#FF0000</color>
     <color name="white">#FFFFFF</color>
     <!-- END DO NOT TOUCH -->
+    <color name="background_lblAvatar">#4D000000</color>
 </resources>

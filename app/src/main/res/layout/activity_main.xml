@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,5 +10,190 @@
     Use android:tint="@color/color_state_selector" in ImageViews corresponding to Icons
     Use android:textColor="@color/color_state_selector" in TextViews acting as labels.
     -->
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="h, 16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/activity_main_Description_imgAvatar" />
+
+    <TextView
+        android:id="@+id/lblAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/lbl_imgAvatar_marginEnd"
+        android:layout_marginBottom="@dimen/lbl_imgAvatar_marginBottom"
+        android:padding="@dimen/lbl_imgAvatar_padding"
+        android:background="@color/background_lblAvatar"
+        android:textColor="@color/white"
+        android:labelFor="@+id/imgAvatar"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar" />
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/lbl_marginStart"
+        android:layout_marginTop="@dimen/lbl_marginTop"
+        android:labelFor="@+id/txtName"
+        android:text="@string/activity_main_lblName"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/txt_marginStart"
+        android:layout_marginEnd="@dimen/txt_marginEnd"
+        android:inputType="textPersonName"
+        android:hint="@string/activity_main_txtName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblName" />
+
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/lbl_marginStart"
+        android:layout_marginTop="@dimen/lbl_marginTop"
+        android:labelFor="@id/txtEmail"
+        android:text="@string/activity_main_lblEmail"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/txt_marginStart"
+        android:layout_marginTop="@dimen/txt_marginTop"
+        android:layout_marginEnd="@dimen/txt_marginEnd"
+        android:inputType="textEmailAddress"
+        android:hint="@string/activity_main_txtEmail"
+        app:layout_constraintEnd_toStartOf="@+id/imgEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
+
+    <ImageView
+        android:id="@+id/imgEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ic_marginEnd"
+        android:src="@drawable/ic_email_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
+        app:layout_constraintEnd_toStartOf="@+id/txtPhonenumber"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail" />
+
+    <TextView
+        android:id="@+id/lblPhonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/lbl_marginStart"
+        android:layout_marginTop="@dimen/lbl_marginTop"
+        android:labelFor="@id/txtPhonenumber"
+        android:text="@string/activity_main_lblPhonenumber"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@+id/imgEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtPhonenumber"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/txt_marginTop"
+        android:layout_marginEnd="@dimen/txt_marginEnd"
+        android:hint="@string/activity_main_txtPhonenumber"
+        android:inputType="phone"
+        app:layout_constraintEnd_toStartOf="@+id/imgPhonenumber"
+        app:layout_constraintTop_toBottomOf="@+id/lblPhonenumber" />
+
+    <ImageView
+        android:id="@+id/imgPhonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ic_marginEnd"
+        android:src="@drawable/ic_call_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPhonenumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtPhonenumber" />
+
+    <TextView
+        android:id="@+id/lblAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/lbl_marginStart"
+        android:layout_marginTop="@dimen/lbl_marginTop"
+        android:labelFor="@id/txtAddress"
+        android:text="@string/activity_main_lblAddress"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/txt_marginStart"
+        android:layout_marginTop="@dimen/txt_marginTop"
+        android:layout_marginEnd="@dimen/txt_marginEnd"
+        android:hint="@string/activity_main_txtAddress"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toStartOf="@+id/imgAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAddress" />
+
+    <ImageView
+        android:id="@+id/imgAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ic_marginEnd"
+        android:src="@drawable/ic_map_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtAddress" />
+
+    <TextView
+        android:id="@+id/lblWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/lbl_marginStart"
+        android:layout_marginTop="@dimen/lbl_marginTop"
+        android:labelFor="@id/txtWeb"
+        android:text="@string/activity_main_lblWeb"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+    <EditText
+        android:id="@+id/txtWeb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/txt_marginStart"
+        android:layout_marginTop="@dimen/txt_marginTop"
+        android:layout_marginEnd="@dimen/txt_marginEnd"
+        android:hint="@string/activity_main_txtWeb"
+        android:inputType="textUri"
+        app:layout_constraintEnd_toStartOf="@+id/imgWeb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblWeb" />
+
+    <ImageView
+        android:id="@+id/imgWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/ic_marginEnd"
+        android:src="@drawable/ic_web_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtWeb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtWeb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
