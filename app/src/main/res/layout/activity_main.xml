@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <!-- TODO
     Use android:tint="@color/color_state_selector" in ImageViews corresponding to Icons
     Use android:textColor="@color/color_state_selector" in TextViews acting as labels.
@@ -32,7 +31,8 @@
         android:layout_marginBottom="32dp"
         android:text="@string/lblAvatar_txt"
         app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"/>
 
     <TextView
         android:id="@+id/lblName"
@@ -57,7 +57,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblName"
-        android:imeOptions="actionNext">
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        tools:ignore="UnusedAttribute">
         <requestFocus/>
     </EditText>
 
@@ -75,7 +77,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblEmail"
         android:imeOptions="actionNext"
-        android:windowSoftInputMode="stateVisible|adjustResize"/>
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        tools:ignore="LabelFor,UnusedAttribute"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/lblEmail"
@@ -120,7 +124,9 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/txtEmail"
         android:windowSoftInputMode="stateVisible|adjustResize"
-        android:imeOptions="actionNext"/>
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        tools:ignore="UnusedAttribute" />
 
     <ImageView
         android:id="@+id/imgEmail"
@@ -175,7 +181,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblAddress"
         android:windowSoftInputMode="stateVisible|adjustResize"
-        android:imeOptions="actionNext"/>
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        tools:ignore="UnusedAttribute" />
 
     <ImageView
         android:id="@+id/imgAddress"
@@ -218,7 +226,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblWeb"
         android:windowSoftInputMode="stateVisible|adjustResize"
-        android:imeOptions="actionDone"/>
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        tools:ignore="UnusedAttribute" />
 
     <ImageView
         android:id="@+id/imgWeb"
