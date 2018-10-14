@@ -20,5 +20,7 @@
     <string name="txtWeb_h">(URL)</string>
     <string name="imgEmail_desc">Email icon</string>
     <string name="imgWeb_desc">Web icon</string>
+    <string name="lblPhonenumbar_txt">Phonenumber</string>
+    <string name="error_data">invalid data</string>
     <!-- END DO NOT TOUCH -->
 </resources>

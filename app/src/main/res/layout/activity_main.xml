@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -38,7 +39,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:labelFor="@id/txtName"
         android:text="@string/lblName_txt"
+        android:textColor="@color/color_state_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
 
@@ -53,27 +56,36 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblName" />
+        app:layout_constraintTop_toBottomOf="@+id/lblName"
+        android:imeOptions="actionNext">
+        <requestFocus/>
+    </EditText>
 
     <EditText
         android:id="@+id/txtEmail"
-        android:layout_width="172dp"
+        android:layout_width="191dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/txtEmail_h"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toStartOf="@+id/imgEmail"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/lblEmail"
+        android:imeOptions="actionNext"
+        android:windowSoftInputMode="stateVisible|adjustResize"/>
 
     <TextView
         android:id="@+id/lblEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:labelFor="@id/txtEmail"
         android:text="@string/lblEmail"
+        android:textColor="@color/color_state_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
@@ -83,45 +95,54 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:labelFor="@id/txtPhonenumber"
+        android:text="@string/lblPhonenumbar_txt"
+        android:textColor="@color/color_state_selector"
+        app:layout_constraintBottom_toTopOf="@+id/txtPhonenumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.776"
-        app:layout_constraintStart_toEndOf="@+id/lblEmail"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/txtPhonenumber"
-        android:layout_width="108dp"
+        android:layout_width="118dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="@string/txtPhone_h"
         android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="@+id/imgEmail"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
         app:layout_constraintEnd_toStartOf="@+id/imgPhonenumber"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgEmail"
-        app:layout_constraintTop_toTopOf="@+id/imgEmail" />
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail"
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        android:imeOptions="actionNext"/>
 
     <ImageView
         android:id="@+id/imgEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imgEmail_desc"
+        android:tint="@color/color_state_selector"
         app:layout_constraintBottom_toBottomOf="@+id/txtEmail"
         app:layout_constraintEnd_toStartOf="@+id/txtPhonenumber"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/txtEmail"
         app:layout_constraintTop_toTopOf="@+id/txtEmail"
-        app:srcCompat="@drawable/ic_email_24dp"
-        android:contentDescription="@string/imgEmail_desc" />
+        app:srcCompat="@drawable/ic_email_24dp" />
 
     <ImageView
         android:id="@+id/imgPhonenumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:contentDescription="@string/imgPhonenumber_desc"
+        android:labelFor="@id/txtPhonenumber"
+        android:tint="@color/color_state_selector"
         app:layout_constraintBottom_toBottomOf="@+id/txtPhonenumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -134,7 +155,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:labelFor="@id/txtAddress"
         android:text="@string/lblAddress_txt"
+        android:textColor="@color/color_state_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
@@ -149,7 +173,9 @@
         app:layout_constraintEnd_toStartOf="@+id/imgAddress"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/lblAddress"
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        android:imeOptions="actionNext"/>
 
     <ImageView
         android:id="@+id/imgAddress"
@@ -158,19 +184,24 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:contentDescription="@string/imgAddress_desc"
+        android:labelFor="@id/txtAddress"
+        android:tint="@color/color_state_selector"
         app:layout_constraintBottom_toBottomOf="@+id/txtAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/txtAddress"
         app:layout_constraintTop_toTopOf="@+id/txtAddress"
-        app:srcCompat="@drawable/ic_map_24dp" />
+        app:srcCompat="@drawable/ic_map_24dp"
+        android:tag="@drawable/ic_map_24dp"/>
 
     <TextView
         android:id="@+id/lblWeb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:labelFor="@id/txtWeb"
         android:text="@string/lblWeb_txt"
+        android:textColor="@color/color_state_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
@@ -185,7 +216,9 @@
         app:layout_constraintEnd_toStartOf="@+id/imgWeb"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblWeb" />
+        app:layout_constraintTop_toBottomOf="@+id/lblWeb"
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        android:imeOptions="actionDone"/>
 
     <ImageView
         android:id="@+id/imgWeb"
@@ -194,10 +227,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/imgWeb_desc"
+        android:labelFor="@id/txtWeb"
+        android:tint="@color/color_state_selector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/txtWeb"
         app:layout_constraintTop_toBottomOf="@+id/lblWeb"
-        app:srcCompat="@drawable/ic_web_24dp"
-        android:contentDescription="@string/imgWeb_desc" />
+        app:srcCompat="@drawable/ic_web_24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
