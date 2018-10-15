@@ -5,5 +5,21 @@
     <string name="main_save">Save</string>
     <string name="main_saved_succesfully">Student saved successfully</string>
     <string name="main_error_saving">Error saving student</string>
+    <string name="lblAvatarTom">Tom</string>
+    <string name="imgAvatarDescription">Text of cat\'s name</string>
+    <string name="txtName">Name</string>
+    <string name="imgPhoneDescription">Phone image</string>
+    <string name="imgEmailDescription">Email image</string>
+    <string name="imgAddressDescription">Address image</string>
+    <string name="imgWebDescription">Web image</string>
+    <string name="nameHint">(name)</string>
+    <string name="textPhonenumber">Phone number</string>
+    <string name="textEmail">email</string>
+    <string name="phoneHint">(phone)</string>
+    <string name="emailHint">(email)</string>
+    <string name="textAddress">Address</string>
+    <string name="addressHint">(address)</string>
+    <string name="textWeb">Web</string>
+    <string name="webHint">(url)</string>
     <!-- END DO NOT TOUCH -->
 </resources>

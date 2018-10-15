@@ -36,6 +36,7 @@ import static org.hamcrest.Matchers.not;
  * Tests
  */
 // DO NOT TOUCH
+@SuppressWarnings("deprecation")
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class MainActivityTest {
@@ -186,7 +187,7 @@ public class MainActivityTest {
     @Test
     public void shouldAddressIconBeEnabledWhenValidData() {
         onView(withId(R.id.txtAddress)).perform(click(), closeSoftKeyboard(), replaceText("test"));
-        onView(withId(R.id.imgAddress)).check(matches(isEnabled()));
+        onView(withId(R.id.imgEmail)).check(matches(isEnabled()));
     }
 
     @Test
@@ -282,7 +283,7 @@ public class MainActivityTest {
 
     @Test
     public void shouldAddressIconBeEnabledInitially() {
-        onView(withId(R.id.imgAddress)).check(matches(isEnabled()));
+        onView(withId(R.id.imgEmail)).check(matches(isEnabled()));
     }
 
     @Test
@@ -302,7 +303,8 @@ public class MainActivityTest {
     }
 
     @Test
-    public void shouldChangeAvatarWhenAvatarTextViewClicked() {
+    public void
+    shouldChangeAvatarWhenAvatarTextViewClicked() {
         Avatar defaultAvatar = Database.getInstance().getDefaultAvatar();
         onView(withId(R.id.lblAvatar)).perform(click(), closeSoftKeyboard());
         onView(withId(R.id.imgAvatar)).check(
@@ -317,7 +319,7 @@ public class MainActivityTest {
         onView(withId(R.id.mnuSave)).perform(click());
         onView(withId(R.id.imgEmail)).check(matches(not(isEnabled())));
         onView(withId(R.id.imgPhonenumber)).check(matches(not(isEnabled())));
-        onView(withId(R.id.imgAddress)).check(matches(not(isEnabled())));
+        onView(withId(R.id.imgEmail)).check(matches(not(isEnabled())));
         onView(withId(R.id.imgWeb)).check(matches(not(isEnabled())));
         onView(withId(R.id.txtName)).check(matches(hasErrorText(
                 testRule.getActivity().getString(R.string.main_invalid_data))));

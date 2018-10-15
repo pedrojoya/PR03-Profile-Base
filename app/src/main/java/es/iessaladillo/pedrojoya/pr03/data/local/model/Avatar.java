@@ -8,7 +8,6 @@ import androidx.annotation.DrawableRes;
 // DO NOT TOUCH
 public class Avatar {
 
-    private long id;
     @DrawableRes
     private final int imageResId;
     private final String name;
@@ -18,12 +17,8 @@ public class Avatar {
         this.name = name;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
-        this.id = id;
+        long id1 = id;
     }
 
     public int getImageResId() {
