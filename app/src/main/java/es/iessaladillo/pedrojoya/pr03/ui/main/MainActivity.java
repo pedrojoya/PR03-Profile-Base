@@ -209,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
         txtWeb.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 save();
+                // LLÉVATE ESTAS LÍNEAS A UN MÉTODO DE UNA CLASE DE UTILIDAD KeyboardUtils
                 InputMethodManager imm =
                         (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 Objects.requireNonNull(imm).hideSoftInputFromWindow(v.getWindowToken(), 0);
@@ -243,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
      * Checks if form is valid or not and shows a Snackbar accordingly
      **/
     private void save() {
+        // LOS TODO LOS DEBES QUITAR CUANDO LOS HAYAS IMPLEMENTADO
         // TODO
         boolean validation = true;
         if (txtName.getText().toString().equals("")) {
@@ -271,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (!ValidationUtils.isValidUrl(txtWeb.getText().toString())) validation = false;
 
 
+        // USA getString() EN VEZ DE getText() Y ASI NO TIENES QUE PONER EL toString()
         if (validation) {
             Snackbar.make(txtWeb, getText(R.string.main_saved_succesfully).toString(), Snackbar.LENGTH_SHORT).show();
         } else

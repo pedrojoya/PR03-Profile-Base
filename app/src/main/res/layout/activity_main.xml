@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cat1" />
 
+    <!-- DEFINE RECURSOS DE DIMENSIÓN PARA LOS MÁRGENES -->
     <TextView
         android:id="@+id/lblAvatar"
         android:layout_width="wrap_content"
@@ -34,6 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/white"/>
 
+    <!-- USA @+id/txtName EN VEZ DE @id/txtName -->
     <TextView
         android:id="@+id/lblName"
         android:layout_width="wrap_content"
@@ -45,6 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
 
+    <!-- DEFINE RECURSOS integer y dimen EN VEZ DE USAR LITERALES -->
     <EditText
         android:id="@+id/txtName"
         android:layout_width="0dp"
@@ -63,6 +66,8 @@
         <requestFocus/>
     </EditText>
 
+    <!-- NO USES (CASI) NUNCA TAMAÑOS FIJOS COMO 191dp. NO TIENE SENTIDO, YA QUE TU
+         APLICACIÓN SE MOSTRARÁ EN DISTINTOS TAMAÑOS DE PANTALLA -->
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="191dp"
