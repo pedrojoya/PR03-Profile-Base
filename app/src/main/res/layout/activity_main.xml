@@ -89,6 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblEmail" />
 
+    <!-- DEBES DEFINIR EL ATRIBUTO contentDescription EN TODOS LOS ImageView -->
     <ImageView
         android:id="@+id/imgEmail"
         android:layout_width="wrap_content"
@@ -208,6 +209,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtWeb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtWeb" />
+
+    <!-- ¿PARA QUÉ DEFINES ESTA VISTA, SÓLO PARA EL SNACKBAR? NO LO HAGAS. AL MOSTRAR EL
+         SNACKBAR SE PUEDE USAR COMO REFERENCIA CUALQUIER VISTA DEL LAYOUT -->
     <TextView
         android:id="@+id/lblText"
         android:layout_width="wrap_content"

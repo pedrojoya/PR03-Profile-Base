@@ -70,18 +70,24 @@ public class MainActivity extends AppCompatActivity {
         lblText = ActivityCompat.requireViewById(this, R.id.lblText);
 
 
+        // LOS NOMBRES DE LOS MÉTODOS NORMALMENTE COMIENZAN CON UN VERBO. POR EJEMPLO
+        // setDefaultAvatar()
         avatarDefault();
 
         imgAvatar.setOnClickListener(v -> changeImg());
 
         lblAvatar.setOnClickListener(v -> changeImg());
 
+        // ESTO NO ES NECESARIO. LO DEBE COGER POR DEFECTO. Y SI NO ES ASÍ, SE PUEDE HACER DESDE
+        // EL XML MEDIANTE <requestFocus /> DENTRO DEL <EditText> CORRESPONDIENTE.
         txtName.requestFocus();
         changeFocus();
         validateOnChange();
         editorAction();
     }
 
+    // EN ESTE MÉTODO HAY MUCHO COPY-PASTE. CUANDO EL CÓDIGO SEA EL MISMO PERO CON DISTINTAS
+    // VARIABLE, DEFINE UN MÉTODO POR FAVOR.
     private void validateOnChange() {
         txtName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -91,8 +97,11 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void afterTextChanged(Editable s) {
+                // DEFINE UN MÉTODO isValidName(cadena)
                 if (txtName.getText().toString().isEmpty()) {
                     txtName.setError(getString(R.string.main_invalid_data));
+                    // ESTO NO ES LO QUE SE INDICABA EN EL VÍDEO DEL ENUNCIADO. TENÍAS DEFINIDO
+                    // EL COLOR color_state_selector PRECISAMENTE PARA ESTO.
                     lblName.setTextColor(getResources().getColor(R.color.colorError));
                 } else {
                     lblName.setTextColor(getResources().getColor(R.color.colorBlack));
@@ -185,9 +194,14 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+        // YO OCULTARÍA EL TECLADO ANTES DE SALVAR.
+        // DE HECHO ESTAS TRATANDO DE CERRAR EL TECLADO DOS VECES, PORQUE YA LO HACES EN EL
+        // MÉTODO save()
         KeyboardUtils.hideSoftKeyboard(this);
     }
 
+    // EN ESTE MÉTODO HAY MUCHO COPY-PASTE. CUANDO EL CÓDIGO SEA EL MISMO PERO CON DISTINTAS
+    // VARIABLE, DEFINE UN MÉTODO POR FAVOR.
     private void changeFocus() {
         txtName.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
@@ -226,6 +240,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // LOS DOS MÉTODOS SIGUIENTES SON PRÁCTICAMENTE IGUALES. REFACTORIZA EL CÓDIGO Y EXTRA UN
+    // MÉTODO showAvatar(avatar)
     private void avatarDefault() {
         imgAvatar.setImageResource(database.getDefaultAvatar().getImageResId());
         imgAvatar.setTag(database.getDefaultAvatar().getImageResId());
@@ -256,6 +272,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // AQUÍ VUELVES A REPETIR EL MISMO CÓDIGO QUE YA HAS USADO ANTES. DEFINE MÉTODOS POR FAVOR.
     private boolean validate() {
         boolean resultado = true;
         if (txtName.getText().toString().isEmpty()) {
@@ -297,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
      * Checks if form is valid or not and shows a Snackbar accordingly
      **/
     private void save() {
+        // CUANDO RESUELVAS UN TODO, QUITA EL COMENTARIO.
         // TODO
         if (!validate()) {
             SnackbarUtils.snackbar(lblText, getString(R.string.main_error_saving));
